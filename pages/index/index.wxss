@@ -63,6 +63,9 @@
 button.btn::after{
   border:none;
 }
+.btn.btn-hover{
+  background-color: #F5F5F5 !important;
+}
 .btn-primary{
   background-color: #F5F5F5;
   color: #FF9C27;
@@ -72,6 +75,10 @@ button.btn::after{
 
 .btn-second {
   background: #F5F5F5;
+}
+
+.btn-second.btn-hover, .btn-primary.btn-hover{
+  background-color: #d8d8d8;
 }
 
 /* 提示 */
