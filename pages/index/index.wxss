@@ -1,0 +1,175 @@
+/**index.wxss**/
+.calc{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.screen-box {
+  background: #fff;
+  border-radius: 4px 4px 0;
+  padding: 5px 10px;
+  position: relative;
+  flex: 1;
+}
+
+.btn-item {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  background: red;
+  vertical-align: middle;
+  /* padding-bottom: 100%;
+  height: 0; */
+}
+
+.btn-item:after {
+  content: '';
+  display: block;
+  padding-top: 80%;  
+} 
+.btn-item .btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-item .btn rich-text{
+  position: absolute;
+  left: 0;
+  right: 0; 
+  top: 50%;
+  margin-top: -10px;
+  line-height: 20px;
+}
+
+.btn-list{
+  font-size: 0;
+}
+
+.btn {
+  color: #111;
+  background-color: #FDFDFD;
+  padding: 0;
+  border-radius: 0;
+  text-align: center;
+  border: 1px solid #F0F0F0;
+  /* line-height: 20px; */
+  font-size: 14px;
+}
+button.btn::after{
+  border:none;
+}
+.btn-primary{
+  background-color: #F5F5F5;
+  color: #FF9C27;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-second {
+  background: #F5F5F5;
+}
+
+/* 提示 */
+.calc-tip-box{
+  font-size: 12px;
+  color: gray;
+}
+
+.calc-tip-box text {
+  margin-right: 5px;
+}
+
+.keybord-box{
+  /* flex: 1; */
+}
+
+.calc-in-out-box{
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  text-align: right;
+  bottom: 10px;
+}
+.calc-result-box,.calc-input-box{
+  text-align: right;
+}
+.calc-result-box{
+  height: 30px; line-height: 30px; font-size: 22px;
+}
+.calc-input-box{
+  color: #1a1a1a; font-size: 16px;
+}
+
+.btn-sub, .btn-sup, .btn-top{
+  display: inline-block;
+  font-size: 10px;
+  line-height: 10px;
+  margin-left: -3px;
+}
+
+.btn-sub {vertical-align: bottom;}
+.btn-sup {vertical-align: top;}
+.btn-top {vertical-align: top; margin-top: 2px;}
+
+
+.mem-item{
+  width: 20%;
+  height: 30px;
+  display: inline-block;
+}
+
+.mem-item .btn{
+  background-color: transparent;
+  line-height: 30px;
+  height: 30px;
+  padding: 0 5px;
+  border: none;
+}
+
+.func-2-btn {
+  display: none;
+}
+
+.func-2 .func-2-btn {
+  display: inline-block;
+}
+.func-2 .func-1-btn {
+  display: none;
+}
+
+.mode-rad .mode-rad-item{
+  display: inline-block;
+}
+.mode-rad .mode-deg-item{
+  display: none;
+}
+
+.mode-deg .mode-rad-item{
+  display: none;
+}
+.mode-deg .mode-deg-item{
+  display: inline-block;
+}
+
+.inv-mode-btn, .func-2 .inv-mode-btn{
+  display: none;
+}
+.inv-mode.func-1 .func-1-btn.inv-mode-btn{
+  display: inline-block;
+}
+.inv-mode.func-2 .func-2-btn.inv-mode-btn{
+  display: inline-block;
+}
+.inv-mode .non-inv-mode-btn{
+  display: none;
+}
+@media screen and (min-width: 375px) {
+  .btn{
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,7 @@
+<!--pages/history/history.wxml-->
+<view wx:for="{{list}}" wx:key="{{input}}" class='his-list'>
+  <view class='his-item' bindtap='tapHistoryItem' data-input='{{item.input}}' data-result="{{item.result}}">
+    <view class='input'>{{item.input}} =</view>
+    <view class='result'>{{item.result}}</view>
+  </view>
+</view>

@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="calc func-{{funcMode}} mode-{{calcMode}} {{invMode ? 'inv-mode': ''}}">
+    <!-- 屏幕 -->
+    <view class="screen-box">
+      <view class='calc-tip-box'>
+        <text>{{calcMode}}</text>
+        <text>{{ funcMode==2 ? '2nd' : ''}}</text>
+        <text>{{ invMode ? 'Inv' : ''}}</text>
+        <text wx:if="{{ mem }}">m</text>
+      </view>
+      <view class='calc-in-out-box'>
+        <view class='calc-input-box'>
+          {{inputText}}
+          <text wx:if="{{status==2}}">=</text>
+        </view>
+        <view wx:if="{{status==2}}" class='calc-result-box'>{{resultText}}</view>
+      </view>
+    </view>
+    <!-- 键盘区域 -->
+    <view class="keybord-box">
+      <!-- Mem btns -->
+      <view class='mem-func-list'>
+        <block wx:for="{{memButtonList}}" wx:key="name">
+          <template is="memButtonItem" data="{{item}}" />
+        </block>
+      </view>
+      <!-- 数字键 -->
+      <view class="btn-list">
+        <block wx:for="{{buttonList}}" wx:key="name">
+          <template is="buttonItem" data="{{item}}" />
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<template name="buttonItem" data="{{btnHeight}}">
+  <view class="btn-item {{item.itemClassName}}">
+    <button class="btn {{item.className}}" bindtap='{{item.onTap? item.onTap:"tapButton"}}' data-value="{{item.value}}">
+      <rich-text>
+        {{item.name}}
+        <text class='btn-sub' wx:if="{{item.sub}}">{{item.sub}}</text>
+        <text class='btn-sup' wx:if="{{item.sup}}">{{item.sup}}</text>
+        <text class='btn-top' wx:if="{{item.top}}">{{item.top}}</text>
+      </rich-text>
+    </button>
+  </view>
+</template>
+
+<template name="memButtonItem">
+  <view class="mem-item">
+    <button class="btn" bindtap='{{item.onTap}}'>
+      {{item.name}}
+    </button>
+  </view>
+</template>
