@@ -25,9 +25,14 @@ const backSpace = function (event, self) {
 }
 
 // 按键效果
-const buttonEffects = function () {
+const buttonEffects = function (sceneMode) {
+  if (sceneMode == 'mute') {
+    return;
+  }
   // 震动
-  wx.vibrateShort();
+  if (sceneMode == 'vibrate') {
+    return wx.vibrateShort();
+  }
   // 音效
   const innerAudioContext = wx.createInnerAudioContext()
   innerAudioContext.autoplay = true
@@ -43,6 +48,9 @@ const buttonEffects = function () {
 }
 Page({
   data: {
+    skin: 'default', // 夜间模式 & 日间模式切换
+    theme: '',
+    sceneMode: 'standard', // 情景模式. mute:静音, vibrate: 震动, standard: 标准
     status: 1,
     calcMode: 'deg',
     funcMode: 1,
@@ -69,10 +77,18 @@ Page({
         name: 'M-',
         onTap: 'memMinus'
       },
-      {
-        name: 'HIS',
-        onTap: 'showHistory'
-      },
+      // {
+      //   name: 'HIS',
+      //   onTap: 'showHistory'
+      // },
+      // {
+      //   name: 'SET',
+      //   onTap: 'openSetting'
+      // },
+      // {
+      //   name: 'MOD',
+      //   onTap: 'changeSkin'
+      // }
     ],
     buttonList: [
       {
@@ -347,7 +363,7 @@ Page({
     var self = this;
     console.log(event.currentTarget.dataset);
 
-    buttonEffects();
+    buttonEffects(self.data.sceneMode);
 
     var val = event.currentTarget.dataset.value;
     var input = self.data.inputText;
@@ -418,15 +434,47 @@ Page({
   },
   // 显示历史记录
   showHistory: function (event) {
-    buttonEffects();
+    buttonEffects(this.data.sceneMode);
     wx.navigateTo({
       url: '../history/history'
     })
   },
+  openSetting: function (event) {
+    buttonEffects(this.data.sceneMode);
+    wx.navigateTo({
+      url: '../setting/setting'
+    })
+  },
+  // 切换日间模式和夜间模式
+  changeSkin: function (event) {
+    this.setData({
+      skin: this.data.skin == 'default'? 'night': 'default'
+    });
+  },
+  // 情景模式切换
+  changeSceneMode: function (event) {
+    var mode = 'standard';
+    switch (this.data.sceneMode) {
+      case 'standard':
+        mode = 'vibrate';
+        break;
+      case 'vibrate':
+        mode = 'mute';
+        break;
+      case 'mute':
+        mode = 'standard';
+        break;
+      default:
+        break;
+    }
+    this.setData({
+      sceneMode: mode
+    });
+  },
 
   // Memory
   memPlus: function (event) {
-    buttonEffects();
+    buttonEffects(this.data.sceneMode);
     let mem = this.data.mem;
     let result = Number(this.data.resultText);
     if (result && !isNaN(result)) {
@@ -435,7 +483,7 @@ Page({
     this.setData({ mem: mem });
   },
   memMinus: function (event) {
-    buttonEffects();
+    buttonEffects(this.data.sceneMode);
     let mem = this.data.mem;
     let result = Number(this.data.resultText);
     if (result && !isNaN(result)) {
@@ -444,7 +492,7 @@ Page({
     this.setData({ mem: mem });
   },
   getMem: function (event) {
-    buttonEffects();
+    buttonEffects(this.data.sceneMode);
     let mem = this.data.mem;
     if (mem){
       var inputText = this.data.inputText;
@@ -459,7 +507,7 @@ Page({
     }
   },
   clearMem: function (event) {
-    buttonEffects();
+    buttonEffects(this.data.sceneMode);
     this.setData({ mem: 0});
   }
 })

@@ -1,9 +1,16 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="calc func-{{funcMode}} mode-{{calcMode}} {{invMode ? 'inv-mode': ''}}">
+  <view class="calc func-{{funcMode}} mode-{{calcMode}} {{invMode ? 'inv-mode': ''}} skin-{{skin}}">
     <!-- 屏幕 -->
     <view class="screen-box">
       <view class='calc-tip-box'>
+        <text>
+          <text wx:if="{{skin == 'default'}}" class="iconfont icon-sun_thin"></text>
+           <text wx:else class="iconfont icon-moonset"></text>
+        </text>
+        <text>
+           <text class="iconfont icon-{{sceneMode}}"></text>
+        </text>
         <text>{{calcMode}}</text>
         <text>{{ funcMode==2 ? '2nd' : ''}}</text>
         <text>{{ invMode ? 'Inv' : ''}}</text>
@@ -19,11 +26,43 @@
     </view>
     <!-- 键盘区域 -->
     <view class="keybord-box">
+    <view class="calc-func-box">
       <!-- Mem btns -->
       <view class='mem-func-list'>
         <block wx:for="{{memButtonList}}" wx:key="name">
           <template is="memButtonItem" data="{{item}}" />
         </block>
+      </view>
+      <!-- func btns -->
+      <view class='calc-func-list'>
+        <!-- func item -->
+        <view class="calc-func-item">
+          <button class="btn" hover-class='btn-hover' bindtap='changeSkin'>
+            <text wx:if="{{skin == 'default'}}" class="iconfont icon-moonset" style='font-widght:400;'></text>
+            <text wx:else class="iconfont icon-sun_thin"></text>
+          </button>
+        </view>
+        <!-- func item -->
+        <view class="calc-func-item">
+          <button class="btn" hover-class='btn-hover' bindtap='showHistory'>
+            <text class="iconfont icon-history"></text>
+          </button>
+        </view>
+        <!-- func item -->
+        <view class="calc-func-item">
+          <button class="btn" hover-class='btn-hover' bindtap='openSetting'>
+            <text class="iconfont icon-setting"></text>
+          </button>
+        </view>
+        <!-- func item -->
+        <view class="calc-func-item">
+          <button class="btn" hover-class='btn-hover' bindtap='changeSceneMode'>
+            <text wx:if="{{sceneMode == 'standard'}}" class="iconfont icon-vibrate"></text>
+            <text wx:if="{{sceneMode == 'vibrate'}}" class="iconfont icon-mute"></text>
+             <text wx:if="{{sceneMode == 'mute'}}" class="iconfont icon-standard"></text>
+          </button>
+        </view>
+      </view>
       </view>
       <!-- 数字键 -->
       <view class="btn-list">
