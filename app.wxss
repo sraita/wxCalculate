@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "src/theme/night.wxss";
+
 .container {
   height: 100%;
 } 

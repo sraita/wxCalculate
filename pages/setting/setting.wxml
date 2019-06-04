@@ -1,2 +1,42 @@
-<!--pages/setting/setting.wxml-->
-<text>pages/setting/setting.wxml</text>
+<!-- pages/setting/setting.wxml -->
+<view class='container skin-{{skin}} theme-{{theme}}'>
+  <view class='set-title'>主题模式</view>
+  <view class='theme-list'>
+    <view wx:for="{{list}}" class='theme-item'>
+      <view class="theme-content">
+        <view class='theme-cover'>
+          <image src='{{item.cover}}' mode="aspectFit"></image>
+        </view>
+        <text  class="using-flag">使用中</text>
+        <rich-text>{{item.title}}</rich-text>
+      </view>
+    </view>
+  </view>
+
+  <view class='set-box'>
+    <view class='set-list'>
+      <button class='set-item'>
+        <view class='name'>清除缓存</view>
+        <view class='value'>{{storageSize}}</view>
+      </button>
+      <button class='set-item'>
+        <view class='name'>使用帮助</view>
+        <view class='value'>
+          <text class="iconfont icon-agent_right"></text>
+        </view>
+      </button>
+      <button class='set-item'  open-type="feedback">
+        <view class='name'>用户反馈</view>
+        <view class='value'>
+          <text class="iconfont icon-agent_right"></text>
+        </view>
+      </button>
+      <button class='set-item'>
+        <view class='name'>关于</view>
+        <view class='value'>
+          <text class="iconfont icon-agent_right"></text>
+        </view>
+      </button>
+    </view>
+  </view>
+</view>

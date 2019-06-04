@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: wx.getStorageSync('history') || []
+    skin: 'default',
+    theme: 'default',
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      skin: wx.getStorageSync('skin') || 'default',
+      theme: wx.getStorageSync('theme') || 'default',
+      list: wx.getStorageSync('history') || []
+    })
     console.log(wx.getStorageSync('history'))
   },
   tapHistoryItem: function (event) {

@@ -1,3 +1,6 @@
+.skin-night.container{
+  background-color: #313131;
+}
 .skin-night.calc{
   background-color: #313131;
   color: #cfcfcf;
@@ -23,3 +26,12 @@
   background-color: #fca529 !important;
 }
 .skin-night .btn.btn-second { color: #cdcdcd}
+
+/* 工具栏 */
+.skin-night .calc-func-list{
+  background-color: #3a3a3a;
+}
+
+.skin-night .mem-item .btn {
+  background-color: #3a3a3a;
+}

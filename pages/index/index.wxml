@@ -51,7 +51,7 @@
         <!-- func item -->
         <view class="calc-func-item">
           <button class="btn" hover-class='btn-hover' bindtap='openSetting'>
-            <text class="iconfont icon-setting"></text>
+            <text class="iconfont icon-settings"></text>
           </button>
         </view>
         <!-- func item -->

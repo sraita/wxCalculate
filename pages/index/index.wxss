@@ -92,6 +92,7 @@ button.btn::after{
   line-height: 20px;
   vertical-align: middle;
 }
+.calc-tip-box text .iconfont { font-size: 12px;}
 
 .keybord-box{
   /* flex: 1; */
@@ -162,7 +163,7 @@ button.btn::after{
   display: block;
   background-color: transparent;
 }
-.calc-func-item .iconfont { font-size: 22px; color: #1a1a1a;}
+.calc-func-item .iconfont { font-size: 22px; color: #8c8c8c;}
 .mem-item{
   width: 50%;
   height: 30px;

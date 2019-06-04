@@ -48,8 +48,8 @@ const buttonEffects = function (sceneMode) {
 }
 Page({
   data: {
-    skin: 'default', // 夜间模式 & 日间模式切换
-    theme: '',
+    skin: 'default',// 夜间模式 & 日间模式切换
+    theme: 'default',
     sceneMode: 'standard', // 情景模式. mute:静音, vibrate: 震动, standard: 标准
     status: 1,
     calcMode: 'deg',
@@ -356,6 +356,8 @@ Page({
   },
   onLoad: function() {
     this.setData({
+      skin: wx.getStorageSync('skin') || 'default',
+      theme: wx.getStorageSync('theme') || 'default',
       btnHeight: Math.floor(app.globalData.sysWidth / 5),
     })
   },
@@ -447,9 +449,11 @@ Page({
   },
   // 切换日间模式和夜间模式
   changeSkin: function (event) {
+    let skin = this.data.skin == 'default' ? 'night' : 'default';
     this.setData({
-      skin: this.data.skin == 'default'? 'night': 'default'
+      skin: skin
     });
+    wx.setStorageSync('skin', skin)
   },
   // 情景模式切换
   changeSceneMode: function (event) {
