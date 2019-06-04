@@ -11,6 +11,17 @@ App({
     userInfo: null,
     sysWidth: wx.getSystemInfoSync().windowWidth,
     skin: 'default',
-    history: []
+    history: [],
+    // 皮肤配置
+    skins: {
+      'default': {
+        color: '#000000',
+        bgColor: '#ffffff'
+      },
+      'night': {
+        color: '#ffffff',
+        bgColor: '#313131'
+      }
+    }
   }
 })

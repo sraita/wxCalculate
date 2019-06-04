@@ -1,19 +1,21 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+const app = getApp();
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+const skinHook = () => {
+  var skin = wx.getStorageSync('skin') || 'default';
+  wx.setNavigationBarColor({
+    frontColor: app.globalData.skins[skin].color, // 必写项
+    backgroundColor: app.globalData.skins[skin].bgColor, // 必写项  对应如上配置
+  });
+  wx.setBackgroundTextStyle({
+    textStyle: skin == 'night' ? 'dark' : 'light' // 下拉背景字体、loading 图的样式
+  });
+  wx.setBackgroundColor({
+    backgroundColor: app.globalData.skins[skin].bgColor,
+    backgroundColorTop: app.globalData.skins[skin].bgColor, // 顶部窗口的背景色
+    backgroundColorBottom: app.globalData.skins[skin].bgColor, // 底部窗口的背景色
+  });
 }
 
 module.exports = {
-  formatTime: formatTime
+  skinHook: skinHook
 }

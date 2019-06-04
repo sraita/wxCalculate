@@ -3,8 +3,46 @@
 
 .container {
   height: 100%;
+  color: #111;
 } 
 
 page{
   height: 100%;
+}
+
+/* 文本颜色 */
+.primary-color { color: #111;}
+.second-color { color: #8c8c8c; }
+
+/* 背景色 */
+.bg-primary {
+  background-color: #fff;
+}
+.bg-second {
+  background-color: #f1f1f7; 
+}
+
+/* 边框颜色 */
+.bd-primary {
+  border-color: #f1f4f7;
+}
+
+.bd-second {
+  border-color: #f2f4f7;
+}
+
+.btn {
+  color: #111;
+  background-color: #FDFDFD;
+  padding: 0;
+  border-radius: 0;
+  text-align: center;
+  border: 1px solid #F0F0F0;
+  font-size: 14px;
+}
+button.btn::after{
+  border:none;
+}
+.btn-hover{
+  background-color: #F5F5F5 !important;
 }

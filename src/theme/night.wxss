@@ -1,6 +1,15 @@
+/* 通用设置 */
 .skin-night.container{
   background-color: #313131;
+  color: #F5F5F5;
 }
+.skin-night .bd-primary {
+  border-color: #2c2c2c;
+}
+.skin-night .btn-hover {
+  background-color:  gray !important;
+}
+
 .skin-night.calc{
   background-color: #313131;
   color: #cfcfcf;
@@ -34,4 +43,21 @@
 
 .skin-night .mem-item .btn {
   background-color: #3a3a3a;
+}
+
+/* 设置页面 */
+.skin-night .set-title{
+  color: #8c8c8c;
+}
+.skin-night .set-box{
+  background-color: #3a3a3a;
+}
+.skin-night .set-item {
+  color: #8c8c8c;
+  border-color: #313131;
+}
+.skin-night .theme-content { border-color: #313131; }
+.skin-night .theme-content rich-text {
+  background-color: #3a3a3a;
+  color: #8c8c8c;
 }

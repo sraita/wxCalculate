@@ -1,8 +1,8 @@
 <!--pages/history/history.wxml-->
 <view class="container skin-{{skin}} theme-{{theme}}">
   <view wx:for="{{list}}" wx:key="{{input}}" class='his-list'>
-    <view class='his-item' bindtap='tapHistoryItem' data-input='{{item.input}}' data-result="{{item.result}}">
-      <view class='input'>{{item.input}} =</view>
+    <view class='his-item bd-primary' bindtap='tapHistoryItem' data-input='{{item.input}}' data-result="{{item.result}}">
+      <view class='input second-color'>{{item.input}} =</view>
       <view class='result'>{{item.result}}</view>
     </view>
   </view>

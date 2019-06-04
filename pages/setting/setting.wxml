@@ -7,7 +7,7 @@
         <view class='theme-cover'>
           <image src='{{item.cover}}' mode="aspectFit"></image>
         </view>
-        <text  class="using-flag">使用中</text>
+        <text wx:if="{{theme == item.name}}" class="using-flag">使用中</text>
         <rich-text>{{item.title}}</rich-text>
       </view>
     </view>
@@ -15,8 +15,8 @@
 
   <view class='set-box'>
     <view class='set-list'>
-      <button class='set-item'>
-        <view class='name'>清除缓存</view>
+      <button class='set-item' bindtap='clearStrage'>
+        <view class='name'>清理缓存数据</view>
         <view class='value'>{{storageSize}}</view>
       </button>
       <button class='set-item'>

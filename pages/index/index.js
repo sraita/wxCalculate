@@ -1,5 +1,5 @@
 //index.js
-
+const Util = require('../../utils/util');
 const { Stack } = require('../../utils/stack.js');
 const { Queue } = require('../../utils/queue.js');
 const { Calculate } = require('../../utils/calculate.js');
@@ -359,7 +359,10 @@ Page({
       skin: wx.getStorageSync('skin') || 'default',
       theme: wx.getStorageSync('theme') || 'default',
       btnHeight: Math.floor(app.globalData.sysWidth / 5),
-    })
+    });
+  },
+  onShow: function () {
+    Util.skinHook();
   },
   tapButton: function(event) {
     var self = this;
@@ -453,7 +456,8 @@ Page({
     this.setData({
       skin: skin
     });
-    wx.setStorageSync('skin', skin)
+    wx.setStorageSync('skin', skin);
+    Util.skinHook();
   },
   // 情景模式切换
   changeSceneMode: function (event) {

@@ -50,22 +50,7 @@
   font-size: 0;
 }
 
-.btn {
-  color: #111;
-  background-color: #FDFDFD;
-  padding: 0;
-  border-radius: 0;
-  text-align: center;
-  border: 1px solid #F0F0F0;
-  /* line-height: 20px; */
-  font-size: 14px;
-}
-button.btn::after{
-  border:none;
-}
-.btn.btn-hover{
-  background-color: #F5F5F5 !important;
-}
+
 .btn-primary{
   background-color: #F5F5F5;
   color: #FF9C27;

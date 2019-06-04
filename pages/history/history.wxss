@@ -1,4 +1,7 @@
 /* pages/history/history.wxss */
+.container {
+  height: auto;
+}
 .his-item{
   border-bottom: 1px solid #f2f4f7;
   padding: 10px;
@@ -7,10 +10,8 @@
 
 .his-item .input{
   font-size: 14px;
-  color: #8c8c8c;
 }
 
 .his-item .result{
   font-size: 22px;
-  color: #1a1a1a;
 }

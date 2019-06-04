@@ -1,4 +1,6 @@
 // pages/history/history.js
+const Util = require('../../utils/util');
+
 Page({
 
   /**
@@ -20,6 +22,9 @@ Page({
       list: wx.getStorageSync('history') || []
     })
     console.log(wx.getStorageSync('history'))
+  },
+  onShow: function () {
+    Util.skinHook();
   },
   tapHistoryItem: function (event) {
     var dataset = event.currentTarget.dataset;
