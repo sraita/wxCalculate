@@ -1,0 +1,91 @@
+.theme-white.container {
+  background-color: #edede8;
+  color: #969696;
+  text-shadow: 1px 1px #fff;
+}
+
+.theme-white .calc-func-list{
+  padding: 5px;
+  background-color: #e8e4e2 !important;
+  white-space: nowrap;
+}
+
+.theme-white .calc-func-item{
+  border-left: 1px solid #d6d1d0;
+  height: 50px;
+}
+.theme-white .calc-func-item:first-child .btn{ border-radius: 4px 0 0 4px;}
+.theme-white .calc-func-item:last-child .btn{
+  border-radius: 0 4px 4px 0;
+}
+.theme-white .calc-func-item:first-child , .theme-white .calc-func-item:first-child .btn{
+  border-left: 0;
+}
+.theme-white .calc-func-item .btn {
+  background-color: #eeeae7 !important;
+  color: #969696;
+  border-left: 1px solid #f9f6f3;
+  text-shadow: 1px 1px #fff;
+  line-height: 50px;
+}
+.theme-white .calc-func-list .btn.btn-hover{
+  background-color: #e7e3e1;
+  box-shadow: inset 1px 1px 4px 0px rgba(0,0,0,.3);
+  border-left: 0;
+}
+
+
+.theme-white .btn-item .btn{
+  position: absolute;
+  padding: 5px;
+  color: #969696;
+  border-radius: 6px;
+  text-shadow: 1px 1px #fff;
+  background: #ebe8e4;
+  background-color: linear-gradient(to bottom, #e0dcdb, #f4f1ec);
+  
+}
+.theme-white .btn-item .btn.btn-primary{
+  color: #e3a67a !important;
+}
+.theme-white .btn-item .btn.btn-second{
+  color: #707070 !important;
+}
+.theme-white .btn-item .btn rich-text {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: #ebe8e4;
+  background-color: linear-gradient(to bottom, #e7e3e1, #f4f1ec); 
+  box-shadow: 0 1px 3px -1px rgba(0,0,0,.3);
+}
+
+.theme-white .btn-item .btn.btn-hover{
+  background: #e3dfde !important;
+  background-color: linear-gradient(to bottom, #e0dcdb, #f4f1ec) !important;
+}
+
+.theme-white .btn-item .btn.btn-hover rich-text {
+  background-color: #e7e3e1 !important;
+  box-shadow: inset 0 1px 5px -1px rgba(0,0,0,.3);
+}
+
+.theme-white .mem-item .btn {
+  color: #969696;
+  border-radius: 3px;
+  text-shadow: 1px 1px #fff;
+  background: #ebe8e4 !important;
+  background-color: linear-gradient(to bottom, #e0dcdb, #f4f1ec) !important;
+  box-shadow: 0 1px 3px -1px rgba(0,0,0,.3),
+              0 1px 3px rgba(0,0,0,.3);
+}
+
+.theme-white .mem-item .btn.btn-hover {
+  background-color: #e7e3e1 !important;
+  box-shadow: inset 0 1px 5px -1px rgba(0,0,0,.3);
+}
+
+.theme-white .calc-in-out-box , .theme-white .calc-in-out-box .calc-input-box, .theme-white .calc-tip-box{
+  color: #969696;
+  text-shadow: 1px 1px #fff;
+}

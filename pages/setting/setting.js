@@ -16,16 +16,21 @@ Page({
     list: [
       {
         name: 'default',
-        title: '秋语',
+        title: '默认',
         cover: '/src/theme/1.jpg'
       },
       {
-        name: 'yinhua',
-        title: '樱花',
+        name: 'white',
+        title: '简·白',
         cover: '/src/theme/2.jpg'
       },{
-        name: 'ertongjie',
-        title: '儿童劫',
+        name: 'tech',
+        title: '科技',
+        cover: '/src/theme/3.jpg'
+      },
+      {
+        name: 'tech',
+        title: '科技',
         cover: '/src/theme/3.jpg'
       }
     ]
@@ -83,5 +88,14 @@ Page({
         });
       }
     })
+  },
+  // 主题切换
+  changeTheme: function (event) {
+    var theme = event.currentTarget.dataset.theme;
+    console.log(theme);
+    this.setData({
+      theme: theme
+    });
+    wx.setStorageSync('theme', theme);
   }
 })

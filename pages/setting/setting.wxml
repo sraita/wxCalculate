@@ -2,7 +2,7 @@
 <view class='container skin-{{skin}} theme-{{theme}}'>
   <view class='set-title'>主题模式</view>
   <view class='theme-list'>
-    <view wx:for="{{list}}" class='theme-item'>
+    <view wx:for="{{list}}" class='theme-item' bindtap="changeTheme" data-theme="{{item.name}}">
       <view class="theme-content">
         <view class='theme-cover'>
           <image src='{{item.cover}}' mode="aspectFit"></image>

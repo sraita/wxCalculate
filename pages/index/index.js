@@ -358,11 +358,18 @@ Page({
     this.setData({
       skin: wx.getStorageSync('skin') || 'default',
       theme: wx.getStorageSync('theme') || 'default',
+      sceneMode: wx.getStorageSync('sceneMode') || 'standard',
       btnHeight: Math.floor(app.globalData.sysWidth / 5),
     });
   },
   onShow: function () {
     Util.skinHook();
+    this.setData({
+      skin: wx.getStorageSync('skin') || 'default',
+      theme: wx.getStorageSync('theme') || 'default',
+      sceneMode: wx.getStorageSync('sceneMode') || 'standard', 
+      btnHeight: Math.floor(app.globalData.sysWidth / 5),
+    });
   },
   tapButton: function(event) {
     var self = this;
@@ -478,6 +485,7 @@ Page({
     this.setData({
       sceneMode: mode
     });
+    wx.setStorageSync('sceneMode', mode); 
   },
 
   // Memory

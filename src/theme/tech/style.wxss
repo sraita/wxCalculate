@@ -1,0 +1,22 @@
+.theme-tech .btn-item .btn {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  background-color: transparent !important;
+  color: #37e0fc;
+  border: 4px solid transparent;
+  border-image: url(http://appcdn.quxueedu.com/calc/btn-1.png) 20 stretch;
+  border-image-width: 6px 8px;
+}
+
+.theme-tech .calc-func-list{
+  background-color: transparent !important;
+  color: #37e0fc;
+  border: 4px solid transparent;
+  border-image: url(http://appcdn.quxueedu.com/calc/btn-1.png) 27 stretch;
+  border-image-width: 6px 8px;
+}

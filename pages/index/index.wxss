@@ -1,9 +1,11 @@
 /**index.wxss**/
 @import "/src/font/iconfont.wxss";
 @import "/src/theme/night.wxss";
+@import "/src/theme/tech/style.wxss";
+@import "/src/theme/white/style.wxss";
 
 .calc{
-  background-color: #fff;
+  /* background-color: #fff; */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -36,16 +38,16 @@
   width: 100%;
   height: 100%;
 }
-
-.btn-item .btn rich-text{
-  position: absolute;
-  left: 0;
-  right: 0; 
-  top: 50%;
-  margin-top: -10px;
-  line-height: 20px;
+.btn-item .btn::before{
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
 }
 
+.btn-item .btn rich-text{
+  display: inline-block;
+}
 .btn-list{
   font-size: 0;
 }
@@ -103,13 +105,12 @@
 .btn-sub, .btn-sup, .btn-top{
   display: inline-block;
   font-size: 10px;
-  line-height: 10px;
   margin-left: -3px;
 }
 
 .btn-sub {vertical-align: bottom;}
 .btn-sup {vertical-align: top;}
-.btn-top {vertical-align: top; margin-top: 2px;}
+.btn-top {vertical-align: top; margin-top: 5px;}
 
 .calc-func-box{
   overflow: hidden;
@@ -123,6 +124,8 @@
 
 .calc-func-list{
   flex: 1;
+  display: flex;
+  height:60px;
   margin: 5px;
   background-color: #f2f4f7;
   border-radius: 4px;
@@ -131,8 +134,8 @@
   overflow: hidden;
 }
 .calc-func-item{
-  width: 25%;
-  height: 60px;
+  /* width: 25%; */
+  flex: 1;
   text-align:center;
   font-size:14px;
   position:relative;

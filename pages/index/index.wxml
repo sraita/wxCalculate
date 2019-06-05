@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="calc func-{{funcMode}} mode-{{calcMode}} {{invMode ? 'inv-mode': ''}} skin-{{skin}}">
+<view class="container theme-{{theme}}  skin-{{skin}}">
+  <view class="calc func-{{funcMode}} mode-{{calcMode}} {{invMode ? 'inv-mode': ''}}">
     <!-- 屏幕 -->
     <view class="screen-box">
       <view class='calc-tip-box'>
