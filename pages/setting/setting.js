@@ -29,8 +29,8 @@ Page({
         cover: '/src/theme/3.jpg'
       },
       {
-        name: 'tech',
-        title: '科技',
+        name: 'kitty',
+        title: 'Kitty',
         cover: '/src/theme/3.jpg'
       }
     ]

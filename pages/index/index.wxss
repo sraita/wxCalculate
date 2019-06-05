@@ -3,6 +3,7 @@
 @import "/src/theme/night.wxss";
 @import "/src/theme/tech/style.wxss";
 @import "/src/theme/white/style.wxss";
+@import "/src/theme/kitty/style.wxss";
 
 .calc{
   /* background-color: #fff; */
