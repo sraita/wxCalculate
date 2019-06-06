@@ -1,6 +1,6 @@
 .theme-white.container {
   background-color: #edede8;
-  color: #969696;
+  color: #8c8c8c;
   text-shadow: 1px 1px #fff;
 }
 
@@ -86,6 +86,75 @@
 }
 
 .theme-white .calc-in-out-box , .theme-white .calc-in-out-box .calc-input-box, .theme-white .calc-tip-box{
-  color: #969696;
+  color: #8c8c8c;
   text-shadow: 1px 1px #fff;
+}
+
+
+/* theme white -- night mode */
+.skin-night.theme-white .calc-in-out-box , .skin-night.theme-white .calc-in-out-box .calc-input-box, .skin-night.theme-white .calc-tip-box{
+  color: #8c8c8c;
+  text-shadow: none;
+}
+.skin-night.theme-white.container {
+  background-color: #313131;
+  color: #F5F5F5;
+  text-shadow: 1px 1px #fff;
+}
+.skin-night.theme-white .mem-item .btn {
+  color: #969696;
+  text-shadow: none;
+  background: #333 !important;
+  background-color: none !important;
+}
+
+.skin-night.theme-white .calc-func-list{
+  background-color: #3b3b3b !important;
+}
+.skin-night.theme-white .calc-func-item{
+  border-left: 1px solid #222;
+}
+.skin-night.theme-white .calc-func-item .btn {
+  background-color: #333 !important;
+  color: #969696;
+  border-left: 1px solid #555;
+  text-shadow: none;
+}
+.skin-night.theme-white .calc-func-item:first-child , .skin-night.theme-white .calc-func-item:first-child .btn{
+  border-left: 0;
+}
+
+.skin-night.theme-white .btn-list {
+  padding: 5px 3px;
+}
+
+.skin-night.theme-white .btn-item .btn{
+  width: auto; height: auto;
+  top: 2px; left: 2px; right: 2px; bottom: 2px;
+  text-shadow: none;
+  background: #3b3b3b;
+  background-color: linear-gradient(to bottom, #303030, #3b3b3b);
+  
+}
+.skin-night.theme-white .btn-item .btn.btn-primary{
+  color: #e3a67a !important;
+}
+.skin-night.theme-white .btn-item .btn.btn-second{
+  color: #8c8c8c !important;
+}
+.skin-night.theme-white .btn-item .btn rich-text {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: #333;
+  background-color: linear-gradient(to bottom, #e7e3e1, #f4f1ec);
+}
+
+.skin-night.theme-white .btn-item .btn.btn-hover{
+  background: #e3dfde !important;
+  background-color: linear-gradient(to bottom, #e0dcdb, #f4f1ec) !important;
+}
+
+.skin-night.theme-white .btn-item .btn.btn-hover rich-text {
+  background-color: #e7e3e1 !important;
 }
