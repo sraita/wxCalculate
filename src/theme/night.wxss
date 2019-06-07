@@ -1,25 +1,25 @@
 /* 通用设置 */
-.skin-night.container{
+.theme-default.skin-night.container{
   background-color: #313131;
   color: #F5F5F5;
 }
-.skin-night .bd-primary {
+.theme-default.skin-night .bd-primary {
   border-color: #2c2c2c;
 }
-.skin-night .btn-hover {
+.theme-default.skin-night .btn-hover {
   background-color:  gray !important;
 }
 
-.skin-night.calc{
+.theme-default.skin-night.calc{
   background-color: #313131;
   color: #cfcfcf;
 }
 
-.skin-night .calc-input-box{
+.theme-default.skin-night .calc-input-box{
   color: #9d9d9d;
 }
 
-.skin-night .btn-item .btn{
+.theme-default.skin-night .btn-item .btn{
   color: #a1a1a1;
   background-color: transparent;
   border: none;
@@ -30,35 +30,35 @@
   padding: 5px;
 }
 
-.skin-night .btn.btn-primary { color: #fca529}
-.skin-night .btn-primary.btn-hover { 
+.theme-default.skin-night .btn.btn-primary { color: #fca529}
+.theme-default.skin-night .btn-primary.btn-hover { 
   color: #fff;
   background-color: #fca529 !important;
 }
-.skin-night .btn.btn-second { color: #cdcdcd}
+.theme-default.skin-night .btn.btn-second { color: #cdcdcd}
 
 /* 工具栏 */
-.skin-night .calc-func-list{
+.theme-default.skin-night .tool-list{
   background-color: #3a3a3a;
 }
 
-.skin-night .mem-item .btn {
+.theme-default.skin-night .mem-item .btn {
   background-color: #3a3a3a;
 }
 
 /* 设置页面 */
-.skin-night .set-title{
+.theme-default.skin-night .set-title{
   color: #8c8c8c;
 }
-.skin-night .set-box{
+.theme-default.skin-night .set-box{
   background-color: #3a3a3a;
 }
-.skin-night .set-item {
+.theme-default.skin-night .set-item {
   color: #8c8c8c;
   border-color: #313131;
 }
-.skin-night .theme-content { border-color: #313131; }
-.skin-night .theme-content rich-text {
+.theme-default.skin-night .theme-content { border-color: #313131; }
+.theme-default.skin-night .theme-content rich-text {
   background-color: #3a3a3a;
   color: #8c8c8c;
 }

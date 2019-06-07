@@ -28,34 +28,34 @@
     <view class="keybord-box">
     <view class="calc-func-box">
       <!-- Mem btns -->
-      <view class='mem-func-list'>
+      <view class='mem-list'>
         <block wx:for="{{memButtonList}}" wx:key="name">
           <template is="memButtonItem" data="{{item}}" />
         </block>
       </view>
-      <!-- func btns -->
-      <view class='calc-func-list'>
-        <!-- func item -->
-        <view class="calc-func-item">
+      <!-- tool btns -->
+      <view class='tool-list'>
+        <!--  tool item -->
+        <view class="tool-item">
           <button class="btn" hover-class='btn-hover' bindtap='changeSkin'>
             <text wx:if="{{skin == 'default'}}" class="iconfont icon-moonset" style='font-widght:400;'></text>
             <text wx:else class="iconfont icon-sun_thin"></text>
           </button>
         </view>
-        <!-- func item -->
-        <view class="calc-func-item">
+        <!--  tool item -->
+        <view class="tool-item">
           <button class="btn" hover-class='btn-hover' bindtap='showHistory'>
             <text class="iconfont icon-history"></text>
           </button>
         </view>
-        <!-- func item -->
-        <view class="calc-func-item">
+        <!--  tool item -->
+        <view class="tool-item">
           <button class="btn" hover-class='btn-hover' bindtap='openSetting'>
             <text class="iconfont icon-settings"></text>
           </button>
         </view>
-        <!-- func item -->
-        <view class="calc-func-item">
+        <!--  tool item -->
+        <view class="tool-item">
           <button class="btn" hover-class='btn-hover' bindtap='changeSceneMode'>
             <text wx:if="{{sceneMode == 'standard'}}" class="iconfont icon-vibrate"></text>
             <text wx:if="{{sceneMode == 'vibrate'}}" class="iconfont icon-mute"></text>
@@ -65,7 +65,7 @@
       </view>
       </view>
       <!-- 数字键 -->
-      <view class="btn-list">
+      <view class="number-list">
         <block wx:for="{{buttonList}}" wx:key="name">
           <template is="buttonItem" data="{{item}}" />
         </block>

@@ -1,0 +1,14 @@
+.theme-default .tool-list{
+  height:60px;
+}
+
+.theme-default .tool-item .btn{
+  line-height: 60px;
+}
+
+/* 数字按钮 - 主体按钮区域 */
+.theme-default .btn-item .btn {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #F0F0F0;
+}

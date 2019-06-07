@@ -1,75 +1,26 @@
 /**index.wxss**/
 @import "/src/font/iconfont.wxss";
+@import "/src/theme/default.wxss";
 @import "/src/theme/night.wxss";
 @import "/src/theme/tech/style.wxss";
 @import "/src/theme/white/style.wxss";
 @import "/src/theme/kitty/style.wxss";
 
 .calc{
-  /* background-color: #fff; */
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
+/* 显示区域 */
 .screen-box {
-  /* background: #fff; */
   border-radius: 4px 4px 0;
   padding: 5px 10px;
   position: relative;
   flex: 1;
 }
 
-.btn-item {
-  display: inline-block;
-  width: 20%;
-  text-align: center;
-  font-size: 14px;
-  position: relative;
-  vertical-align: middle;
-}
-
-.btn-item:after {
-  content: '';
-  display: block;
-  padding-top: 70%;  
-} 
-.btn-item .btn {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.btn-item .btn::before{
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-}
-
-.btn-item .btn rich-text{
-  display: inline-block;
-}
-.btn-list{
-  font-size: 0;
-}
-
-
-.btn-primary{
-  background-color: #F5F5F5;
-  color: #FF9C27;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.btn-second {
-  background: #F5F5F5;
-}
-
-.btn-second.btn-hover, .btn-primary.btn-hover{
-  background-color: #d8d8d8;
-}
-
-/* 提示 */
+/* 状态提示栏 */
 .calc-tip-box{
   font-size: 12px;
   color: gray;
@@ -82,10 +33,7 @@
 }
 .calc-tip-box text .iconfont { font-size: 12px;}
 
-.keybord-box{
-  /* flex: 1; */
-}
-
+/* 输入输出显示区域 */
 .calc-in-out-box{
   position: absolute;
   left: 10px;
@@ -103,6 +51,113 @@
   color: #1a1a1a; font-size: 16px;
 }
 
+/* 记忆功能区 */
+.calc-func-box{
+  overflow: hidden;
+  display: flex;
+}
+.mem-list{
+  padding-bottom: 0;
+  width: 40%;
+}
+.mem-item{
+  width: 50%;
+  height: 30px;
+  font-size: 12px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.mem-item .btn{
+  line-height: 25px;
+  height: 25px;
+  padding: 0 5px;
+  background-color: #f1f1f7;
+  border: none;
+  border-radius: 3px;
+}
+
+/* 工具栏 */
+.tool-list{
+  flex: 1;
+  display: flex;
+  margin: 5px;
+  background-color: #f2f4f7;
+  border-radius: 4px;
+  text-align: right;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.tool-item{
+  flex: 1;
+  text-align:center;
+  font-size:14px;
+  position:relative;
+  vertical-align:middle;
+  display: inline-block;
+}
+.tool-item .btn{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background-color: transparent;
+}
+.tool-item .iconfont { 
+  font-size: 22px; 
+  color: #8c8c8c;
+}
+
+/* 数字按钮 - 主体按钮区域 */
+.btn-list{
+  font-size: 0;
+}
+.btn-item {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.btn-item:after {
+  content: '';
+  display: block;
+  padding-top: 70%;  
+} 
+.btn-item .btn {
+  position: absolute;
+  /* width: 100%;
+  height: 100%; */
+}
+.btn-item .btn::before{
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.btn-item .btn rich-text{
+  display: inline-block;
+}
+
+.btn-primary{
+  background-color: #F5F5F5;
+  color: #FF9C27;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-second {
+  background: #F5F5F5;
+}
+
+.btn-second.btn-hover, .btn-primary.btn-hover{
+  background-color: #d8d8d8;
+}
+/* 按钮角标 */
 .btn-sub, .btn-sup, .btn-top{
   display: inline-block;
   font-size: 10px;
@@ -113,68 +168,11 @@
 .btn-sup {vertical-align: top;}
 .btn-top {vertical-align: top; margin-top: 5px;}
 
-.calc-func-box{
-  overflow: hidden;
-  display: flex;
-}
-.mem-func-list{
-  /* padding: 5px; */
-  padding-bottom: 0;
-  width: 40%;
-}
 
-.calc-func-list{
-  flex: 1;
-  display: flex;
-  height:60px;
-  margin: 5px;
-  background-color: #f2f4f7;
-  border-radius: 4px;
-  text-align: right;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.calc-func-item{
-  /* width: 25%; */
-  flex: 1;
-  text-align:center;
-  font-size:14px;
-  position:relative;
-  vertical-align:middle;
-  display: inline-block;
-}
-.calc-func-item .btn{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 60px;
-  border: none;
-  display: block;
-  background-color: transparent;
-}
-.calc-func-item .iconfont { font-size: 22px; color: #8c8c8c;}
-.mem-item{
-  width: 50%;
-  height: 30px;
-  font-size: 12px;
-  padding: 5px;
-  box-sizing: border-box;
-  display: inline-block;
-}
-
-.mem-item .btn{
-  line-height: 25px;
-  height: 25px;
-  padding: 0 5px;
-  background-color: #f1f1f7;
-  border: none;
-  border-radius: 3px;
-}
-
+/* 第二功能切换 & 反三角函数切换 */
 .func-2-btn {
   display: none;
 }
-
 .func-2 .func-2-btn {
   display: inline-block;
 }
@@ -208,6 +206,8 @@
 .inv-mode .non-inv-mode-btn{
   display: none;
 }
+
+
 @media screen and (min-width: 375px) {
   .btn{
     font-size: 16px;
