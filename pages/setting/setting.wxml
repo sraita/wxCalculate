@@ -15,10 +15,19 @@
 
   <view class='set-box'>
     <view class='set-list'>
+      <button class='set-item' bindtap='changeAudioEffect'>
+        <view class='name'>音效设置</view>
+        <view class='value'>{{audioEffect}}</view>
+      </button>
       <button class='set-item' bindtap='clearStrage'>
         <view class='name'>清理缓存数据</view>
         <view class='value'>{{storageSize}}</view>
       </button>
+    </view>
+  </view>
+
+  <view class='set-box'>
+    <view class='set-list'>
       <button class='set-item'>
         <view class='name'>使用帮助</view>
         <view class='value'>

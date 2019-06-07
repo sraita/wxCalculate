@@ -10,6 +10,7 @@ Page({
   data: {
     skin: 'default',
     theme: 'default',
+    audioEffect: '默认音效',
     // 缓存大小
     storageSize: '0 KB',
     // 主题列表
@@ -68,6 +69,10 @@ Page({
    */
   onShow: function () {
     Util.skinHook();
+    let effect = wx.getStorageSync('audioEffect') || 'default'
+    this.setData({
+      audioEffect: app.globalData.audio[effect].title,
+    })
   },
   clearStrage: function (event) {
     let self = this;
@@ -97,5 +102,43 @@ Page({
       theme: theme
     });
     wx.setStorageSync('theme', theme);
+  },
+  // 音效设置
+  changeAudioEffect: function (event) {
+    console.log('修改音效')
+    let effect = 'default';
+    var itemList = ['默认音效','真人发声','钢琴','机械键盘','架子鼓']
+    wx.showActionSheet({
+      itemList: itemList,
+      success(res) {
+        switch (res.tapIndex) {
+          case 0:
+            effect = 'default';
+            break;
+          case 1:
+            effect = 'rensheng';
+            break;
+          case 2: 
+            effect = 'piano';
+            break;
+          case 3:
+            effect = 'cherry';
+            break;
+          case 4:
+            effect = 'drum';
+            break;
+          default:
+            break;
+        }
+        wx.setStorageSync('audioEffect', effect);
+        this.setData({
+          audioEffect: app.globalData.audio[effect].title,
+        });
+
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    });
   }
 })

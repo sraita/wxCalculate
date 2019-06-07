@@ -24,20 +24,22 @@ const backSpace = function (event, self) {
   }
 }
 
-// 按键效果
-const buttonEffects = function (sceneMode) {
-  if (sceneMode == 'mute') {
-    return;
+const clickAudioEffects = function (btnKey) {
+  // let audioType = 'rensheng';
+  // let audioType = 'piano';
+  // let audioType = 'cherry';
+  let audioType = wx.getStorageSync('audioEffect') || 'default';
+  let src = app.globalData.audio[audioType].keys[btnKey];
+  if (!src) {
+    src = app.globalData.audio[audioType].keys['normal'];
   }
-  // 震动
-  if (sceneMode == 'vibrate') {
-    return wx.vibrateShort();
-  }
-  // 音效
+  src = `/src/audio/${audioType}/${src}.mp3`;
+  console.log(src);
   const innerAudioContext = wx.createInnerAudioContext()
   innerAudioContext.autoplay = true
   // innerAudioContext.src = 'http://file.52lishi.com/file/yinxiao/ly-17-03-02-31.mp3'
-  innerAudioContext.src = 'http://s.aigei.com/pvaud_mp3/aud/mp3/52/5211993fcda34493ae73b183fdc45869.mp3?download/%E6%8C%89%E9%92%AE12%28Button12%29_%E7%88%B1%E7%BB%99%E7%BD%91_aigei_com.mp3&optLogId=d21b41eec1744d2788b91ced3394d443&e=1559501820&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:M7MjucN48l3BYCUmW5aO1AIvTGE=';
+  // innerAudioContext.src = 'http://s.aigei.com/pvaud_mp3/aud/mp3/52/5211993fcda34493ae73b183fdc45869.mp3?download/%E6%8C%89%E9%92%AE12%28Button12%29_%E7%88%B1%E7%BB%99%E7%BD%91_aigei_com.mp3&optLogId=d21b41eec1744d2788b91ced3394d443&e=1559501820&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:M7MjucN48l3BYCUmW5aO1AIvTGE=';
+  innerAudioContext.src = src;
   innerAudioContext.onPlay(() => {
     console.log('开始播放')
   })
@@ -46,10 +48,24 @@ const buttonEffects = function (sceneMode) {
     console.log(res.errCode)
   })
 }
+
+// 按键效果
+const buttonEffects = function (sceneMode, btnKey) {
+  if (sceneMode == 'mute') {
+    return;
+  }
+  // 震动
+  if (sceneMode == 'vibrate') {
+    return wx.vibrateShort();
+  }
+  // 音效
+  clickAudioEffects(btnKey);
+}
 Page({
   data: {
     skin: 'default',// 夜间模式 & 日间模式切换
     theme: 'default',
+    audioEffect: 'default',
     sceneMode: 'standard', // 情景模式. mute:静音, vibrate: 震动, standard: 标准
     status: 1,
     calcMode: 'deg',
@@ -367,6 +383,7 @@ Page({
     this.setData({
       skin: wx.getStorageSync('skin') || 'default',
       theme: wx.getStorageSync('theme') || 'default',
+      audioEffect: wx.getStorageSync('audioEffect') || 'default',
       sceneMode: wx.getStorageSync('sceneMode') || 'standard', 
       btnHeight: Math.floor(app.globalData.sysWidth / 5),
     });
@@ -375,9 +392,10 @@ Page({
     var self = this;
     console.log(event.currentTarget.dataset);
 
-    buttonEffects(self.data.sceneMode);
-
     var val = event.currentTarget.dataset.value;
+    console.log(val);
+    buttonEffects(self.data.sceneMode, val);
+
     var input = self.data.inputText;
     switch (val) {
       case 'clearScreen':

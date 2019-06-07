@@ -77,7 +77,7 @@
 
 <template name="buttonItem" data="{{btnHeight}}">
   <view class="btn-item {{item.itemClassName}}">
-    <button class="btn {{item.className}}" hover-class="btn-hover" bindtap='{{item.onTap? item.onTap:"tapButton"}}' data-value="{{item.value}}">
+    <button class="btn {{item.className}}" hover-class="btn-hover" bindtap='{{item.onTap? item.onTap:"tapButton"}}' data-value="{{item.value}}" data-key="{{item.name}}">
       <rich-text>
         {{item.name}}
         <text class='btn-sub' wx:if="{{item.sub}}">{{item.sub}}</text>
