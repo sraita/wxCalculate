@@ -1,6 +1,7 @@
 .theme-kitty.container{
   background-color: #fff1f7;
   color: #fe8cb2;
+  text-shadow: 1px 1px #fff;
 }
 
 
@@ -61,5 +62,30 @@
 
 .theme-kitty .calc-in-out-box , .theme-kitty .calc-in-out-box .calc-input-box, .theme-kitty .calc-tip-box{
   color: #fe8cb2;
+  text-shadow: 1px 1px #fff;
+}
+
+/* 历史记录页面 */
+.theme-kitty .his-item { 
+  border-bottom: 1px solid #ffc5dc;
+  text-shadow: 1px 1px #fff;
+}
+/* 设置页面 */
+.theme-kitty .set-title {
+  color: #ff3b7b;
+  text-shadow: 1px 1px #fff;
+}
+.theme-kitty .set-box{
+  background-color: #fff;
+}
+.theme-kitty .set-item {
+  color: #ff3b7b;
+  border-color: #fff1f7;
+}
+.theme-kitty .set-item .value { color: #ffc5dc;}
+.theme-kitty .theme-content { border-color: #ff78ac; }
+.theme-kitty .theme-content rich-text {
+  background-color: #fff;
+  color: #ff3b7b;
   text-shadow: 1px 1px #fff;
 }

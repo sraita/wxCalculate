@@ -55,3 +55,21 @@
   top: 2px;
   bottom: 2px;
 }
+
+/* 历史记录页面 */
+.theme-tech .his-item { 
+  border-bottom: 1px solid #24444a;
+}
+/* 设置页面 */
+.theme-tech .set-box{
+  background-color: #353b3e;
+}
+.theme-tech .set-item {
+  color: #37e0fc;
+  border-color: #313131;
+}
+.theme-tech .theme-content { border-color: #313131; }
+.theme-tech .theme-content rich-text {
+  background-color: #3a3a3a;
+  color: #37e0fc;
+}

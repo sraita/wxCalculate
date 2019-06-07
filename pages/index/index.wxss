@@ -1,10 +1,5 @@
 /**index.wxss**/
-@import "/src/font/iconfont.wxss";
-@import "/src/theme/default.wxss";
-@import "/src/theme/night.wxss";
-@import "/src/theme/tech/style.wxss";
-@import "/src/theme/white/style.wxss";
-@import "/src/theme/kitty/style.wxss";
+
 
 .calc{
   display: flex;
